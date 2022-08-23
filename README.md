@@ -1,2 +1,2 @@
-# FlappyBird_WithPython
-Flappy Bird MAke With Python And Pygame
+# FlappyBird WithPython
+Flappy Bird Make With Python And Pygame
