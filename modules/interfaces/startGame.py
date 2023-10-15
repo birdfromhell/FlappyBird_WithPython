@@ -1,18 +1,16 @@
-
-
 import sys
 import pygame
 import itertools
 
 
 def startGame(screen, sounds, bird_images, other_images, background_image, cfg):
-    base_pos = [0, cfg.SCREENHEIGHT*0.79]
+    base_pos = [0, cfg.SCREENHEIGHT * 0.79]
     base_diff_bg = other_images['base'].get_width() - background_image.get_width()
-    msg_pos = [(cfg.SCREENWIDTH-other_images['message'].get_width())/2, cfg.SCREENHEIGHT*0.12]
+    msg_pos = [(cfg.SCREENWIDTH - other_images['message'].get_width()) / 2, cfg.SCREENHEIGHT * 0.12]
     bird_idx = 0
     bird_idx_change_count = 0
     bird_idx_cycle = itertools.cycle([0, 1, 2, 1])
-    bird_pos = [cfg.SCREENWIDTH*0.2, (cfg.SCREENHEIGHT-list(bird_images.values())[0].get_height())/2]
+    bird_pos = [cfg.SCREENWIDTH * 0.2, (cfg.SCREENHEIGHT - list(bird_images.values())[0].get_height()) / 2]
     bird_y_shift_count = 0
     bird_y_shift_max = 9
     shift = 1
@@ -27,18 +25,18 @@ def startGame(screen, sounds, bird_images, other_images, background_image, cfg):
                     return {'bird_pos': bird_pos, 'base_pos': base_pos, 'bird_idx': bird_idx}
         sounds['wing'].play()
         bird_idx_change_count += 1
-        
+
         if bird_idx_change_count % 5 == 0:
             bird_idx = next(bird_idx_cycle)
             bird_idx_change_count = 0
         base_pos[0] = -((-base_pos[0] + 4) % base_diff_bg)
         bird_y_shift_count += 1
-        
+
         if bird_y_shift_count == bird_y_shift_max:
             bird_y_shift_max = 16
             shift = -1 * shift
             bird_y_shift_count = 0
-            
+
         bird_pos[-1] = bird_pos[-1] + shift
         screen.blit(background_image, (0, 0))
         screen.blit(list(bird_images.values())[bird_idx], bird_pos)
@@ -46,14 +44,3 @@ def startGame(screen, sounds, bird_images, other_images, background_image, cfg):
         screen.blit(other_images['base'], base_pos)
         pygame.display.update()
         clock.tick(cfg.FPS)
-                    
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                

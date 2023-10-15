@@ -1,6 +1,6 @@
 import os
 
-#FPS
+# FPS
 
 FPS = 60
 
@@ -8,7 +8,6 @@ SCREENWIDTH = 288
 SCREENHEIGHT = 512
 
 PIPE_GAP_SIZE = 100
-
 
 NUMBER_IMAGE_PATHS = {
     '0': os.path.join(os.getcwd(), 'resources/images/0.png'),
@@ -22,8 +21,6 @@ NUMBER_IMAGE_PATHS = {
     '8': os.path.join(os.getcwd(), 'resources/images/8.png'),
     '9': os.path.join(os.getcwd(), 'resources/images/9.png')
 }
-
-
 
 BIRD_IMAGE_PATHS = {
     'red': {
@@ -48,7 +45,6 @@ BACKGROUND_IMAGE_PATHS = {
     'night': os.path.join(os.getcwd(), 'resources/images/background-night.png')
 }
 
-
 PIPE_IMAGE_PATHS = {
     'green': os.path.join(os.getcwd(), 'resources/images/pipe-green.png'),
     'red': os.path.join(os.getcwd(), 'resources/images/pipe-red.png')
@@ -59,7 +55,6 @@ OTHER_IMAGE_PATHS = {
     'message': os.path.join(os.getcwd(), 'resources/images/message.png'),
     'base': os.path.join(os.getcwd(), 'resources/images/base.png')
 }
-
 
 AUDIO_PATHS = {
     'die': os.path.join(os.getcwd(), 'resources/audios/die.wav'),
